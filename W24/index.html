@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Reviews</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .movie-poster {
+            max-width: 150px;
+            margin: 0 auto;
+            display: block;
+        }
+        .rating {
+            color: orange;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme="b">
+            <h1>Movie Reviews</h1>
+        </div>
+
+        <div data-role="content">
+            <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-center">
+                <a href="#" class="ui-btn ui-btn-active">All</a>
+                <a href="#" class="ui-btn">Action</a>
+                <a href="#" class="ui-btn">Comedy</a>
+                <a href="#" class="ui-btn">Drama</a>
+            </div>
+            
+            <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search movies...">
+                <li><a href="#movie1">
+                    <img src="https://via.placeholder.com/100" alt="Movie 1">
+                    <h2>The Action Hero</h2>
+                    <p>Genre: Action | Rating: ★★★★☆</p>
+                </a></li>
+                <li><a href="#movie2">
+                    <img src="https://via.placeholder.com/100" alt="Movie 2">
+                    <h2>Laugh Out Loud</h2>
+                    <p>Genre: Comedy | Rating: ★★★★★</p>
+                </a></li>
+                <li><a href="#movie3">
+                    <img src="https://via.placeholder.com/100" alt="Movie 3">
+                    <h2>Life Journey</h2>
+                    <p>Genre: Drama | Rating: ★★★☆☆</p>
+                </a></li>
+                <li><a href="#movie4">
+                    <img src="https://via.placeholder.com/100" alt="Movie 4">
+                    <h2>Mystery Manor</h2>
+                    <p>Genre: Mystery | Rating: ★★★★☆</p>
+                </a></li>
+            </ul>
+            
+            <div data-role="popup" id="sortPopup" data-theme="a">
+                <ul data-role="listview" data-inset="true" style="min-width:210px;">
+                    <li data-role="list-divider">Sort by</li>
+                    <li><a href="#">Latest</a></li>
+                    <li><a href="#">Best Rating</a></li>
+                    <li><a href="#">Title (A-Z)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+                    <li><a href="#" data-icon="star">Top Rated</a></li>
+                    <li><a href="#" data-icon="gear">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Movie 1 Details -->
+    <div data-role="page" id="movie1">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="back">Back</a>
+            <h1>The Action Hero</h1>
+        </div>
+
+        <div data-role="content">
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster" class="movie-poster">
+                </div>
+                <div class="ui-block-b">
+                    <h3>The Action Hero</h3>
+                    <p><strong>Genre:</strong> Action</p>
+                    <p><strong>Release:</strong> 2023</p>
+                    <p><strong>Director:</strong> John Smith</p>
+                    <p class="rating">Rating: ★★★★☆</p>
+                </div>
+            </div>
+            
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Synopsis</h3>
+                <p>A retired special forces agent is forced back into action when his family is threatened by a criminal gang seeking revenge.</p>
+            </div>
+            
+            <div data-role="collapsible">
+                <h3>Review</h3>
+                <p>The Action Hero delivers exactly what fans of the genre expect - thrilling stunts, intense fight sequences, and a straightforward plot. The lead actor gives a compelling performance, though the villain lacks depth. The cinematography is excellent, with well-choreographed action scenes that keep you on the edge of your seat.</p>
+                <p>The film loses steam in the middle act, but recovers for an explosive finale. Overall, a solid action film that entertains throughout its runtime.</p>
+            </div>
+            
+            <div data-role="collapsible">
+                <h3>Cast</h3>
+                <ul data-role="listview">
+                    <li>James Wilson as John Blake</li>
+                    <li>Sarah Miller as Lisa Blake</li>
+                    <li>Tom Harris as Viktor</li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home">Home</a></li>
+                    <li><a href="#" data-icon="star">Top Rated</a></li>
+                    <li><a href="#" data-icon="gear">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Movie 2 Details -->
+    <div data-role="page" id="movie2">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="back">Back</a>
+            <h1>Laugh Out Loud</h1>
+        </div>
+
+        <div data-role="content">
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="https://via.placeholder.com/150" alt="Movie Poster" class="movie-poster">
+                </div>
+                <div class="ui-block-b">
+                    <h3>Laugh Out Loud</h3>
+                    <p><strong>Genre:</strong> Comedy</p>
+                    <p><strong>Release:</strong> 2023</p>
+                    <p><strong>Director:</strong> Mary Johnson</p>
+                    <p class="rating">Rating: ★★★★★</p>
+                </div>
+            </div>
+            
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Synopsis</h3>
+                <p>Two best friends embark on a cross-country road trip that quickly turns into a series of hilarious misadventures.</p>
+            </div>
+            
+            <div data-role="collapsible">
+                <h3>Review</h3>
+                <p>Laugh Out Loud is one of the funniest comedies of the year! The chemistry between the lead actors is infectious, and the script is filled with clever jokes and memorable one-liners.</p>
+                <p>The movie balances slapstick humor with heartfelt moments, creating a comedy that's both entertaining and emotionally resonant. A must-watch for comedy fans!</p>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home">Home</a></li>
+                    <li><a href="#" data-icon="star">Top Rated</a></li>
+                    <li><a href="#" data-icon="gear">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add more movie details pages for movie3 and movie4 following similar structure -->
+</body>
+</html>
