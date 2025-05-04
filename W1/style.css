@@ -6,7 +6,7 @@ body {
 
 .container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 h1 {
@@ -17,24 +17,41 @@ h1 {
 .products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 20px;
 }
 
 .product {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 15px;
-    margin-bottom: 20px;
     width: 250px;
     text-align: center;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
+button, .pagination button {
+    background: #4CAF50;
+    color: #fff;
     padding: 8px 15px;
     border: none;
     cursor: pointer;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.product-table th, .product-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.product-table img {
+    max-width: 100px;
+    height: auto;
 }
 
 .pagination {
@@ -42,8 +59,6 @@ button {
     margin-top: 20px;
 }
 
-.pagination button {
-    margin: 0 5px;
-    background-color: #ddd;
-    color: black;
+#page2 {
+    display: none;
 }

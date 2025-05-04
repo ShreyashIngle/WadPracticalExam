@@ -8,63 +8,94 @@
     <div class="container">
         <h1>Product Catalog</h1>
         
-        <div class="products" id="page1">
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Product 1">
-                <h3>T-Shirt</h3>
-                <p>Price: $19.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Product 2">
-                <h3>Jeans</h3>
-                <p>Price: $39.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Product 3">
-                <h3>Sneakers</h3>
-                <p>Price: $59.99</p>
-                <button>Add to Cart</button>
-            </div>
+        <div id="page1">
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Price (INR ₹)</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Product 1"></td>
+                        <td>Wireless Headphones</td>
+                        <td>₹7,999</td>
+                        <td>Noise-cancelling over-ear headphones.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Product 2"></td>
+                        <td>Smartwatch</td>
+                        <td>₹12,999</td>
+                        <td>Fitness tracking smartwatch.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Product 3"></td>
+                        <td>Gaming Mouse</td>
+                        <td>₹2,499</td>
+                        <td>Ergonomic gaming mouse.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         
-        <div class="products" id="page2">
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Product 4">
-                <h3>Watch</h3>
-                <p>Price: $99.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Product 5">
-                <h3>Backpack</h3>
-                <p>Price: $49.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Product 6">
-                <h3>Hoodie</h3>
-                <p>Price: $29.99</p>
-                <button>Add to Cart</button>
-            </div>
+        <div id="page2">
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Price (INR ₹)</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Product 4"></td>
+                        <td>Laptop Stand</td>
+                        <td>₹1,999</td>
+                        <td>Adjustable aluminium stand.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         
         <div class="pagination">
-            <button onclick="showPage('page1')">1</button>
-            <button onclick="showPage('page2')">2</button>
+            <button onclick="prevPage()" id="prev">Previous</button>
+            <span id="page-info">Page 1 of 2</span>
+            <button onclick="nextPage()" id="next">Next</button>
         </div>
     </div>
     
     <script>
-        function showPage(pageId) {
+        let currentPage = 1;
+        const totalPages = 2;
+        
+        function showPage(pageNum) {
             document.getElementById('page1').style.display = 'none';
             document.getElementById('page2').style.display = 'none';
-            document.getElementById(pageId).style.display = 'flex';
+            document.getElementById('page' + pageNum).style.display = 'block';
+            
+            currentPage = pageNum;
+            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+        }
+        
+        function prevPage() {
+            if (currentPage > 1) {
+                showPage(currentPage - 1);
+            }
+        }
+        
+        function nextPage() {
+            if (currentPage < totalPages) {
+                showPage(currentPage + 1);
+            }
         }
         
         // Initialize page
-        showPage('page1');
+        showPage(1);
     </script>
 </body>
 </html>

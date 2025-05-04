@@ -1,8 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-color: #f0f8ff;
-    color: #333;
     text-align: center;
 }
 
@@ -41,6 +39,5 @@ button:hover {
     padding: 20px;
     margin: 20px auto;
     max-width: 600px;
-    background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
