@@ -1,101 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Product Catalog</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Product Catalog</h1>
-        
-        <div id="page1">
-            <table class="product-table">
-                <thead>
-                    <tr>
-                        <th>Product Image</th>
-                        <th>Product Name</th>
-                        <th>Price (INR ₹)</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="https://via.placeholder.com/100" alt="Product 1"></td>
-                        <td>Wireless Headphones</td>
-                        <td>₹7,999</td>
-                        <td>Noise-cancelling over-ear headphones.</td>
-                    </tr>
-                    <tr>
-                        <td><img src="https://via.placeholder.com/100" alt="Product 2"></td>
-                        <td>Smartwatch</td>
-                        <td>₹12,999</td>
-                        <td>Fitness tracking smartwatch.</td>
-                    </tr>
-                    <tr>
-                        <td><img src="https://via.placeholder.com/100" alt="Product 3"></td>
-                        <td>Gaming Mouse</td>
-                        <td>₹2,499</td>
-                        <td>Ergonomic gaming mouse.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <div id="page2">
-            <table class="product-table">
-                <thead>
-                    <tr>
-                        <th>Product Image</th>
-                        <th>Product Name</th>
-                        <th>Price (INR ₹)</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="https://via.placeholder.com/100" alt="Product 4"></td>
-                        <td>Laptop Stand</td>
-                        <td>₹1,999</td>
-                        <td>Adjustable aluminium stand.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="pagination">
-            <button onclick="prevPage()" id="prev">Previous</button>
-            <span id="page-info">Page 1 of 2</span>
-            <button onclick="nextPage()" id="next">Next</button>
-        </div>
+      <h1>Product Catalog</h1>
+
+      <div id="page1">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price (₹)</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="https://via.placeholder.com/100" /></td>
+              <td>Wireless Headphones</td>
+              <td>₹7,999</td>
+              <td>Noise-cancelling over-ear headphones.</td>
+            </tr>
+            <tr>
+              <td><img src="https://via.placeholder.com/100" /></td>
+              <td>Smartwatch</td>
+              <td>₹12,999</td>
+              <td>Fitness tracking smartwatch.</td>
+            </tr>
+            <tr>
+              <td><img src="https://via.placeholder.com/100" /></td>
+              <td>Gaming Mouse</td>
+              <td>₹2,499</td>
+              <td>Ergonomic gaming mouse.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="page2">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price (₹)</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="https://via.placeholder.com/100" /></td>
+              <td>Laptop Stand</td>
+              <td>₹1,999</td>
+              <td>Adjustable aluminium stand.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button onclick="changePage(-1)">Previous</button>
+        <span id="page-info">Page 1 of 2</span>
+        <button onclick="changePage(1)">Next</button>
+      </div>
     </div>
-    
+
     <script>
-        let currentPage = 1;
-        const totalPages = 2;
-        
-        function showPage(pageNum) {
-            document.getElementById('page1').style.display = 'none';
-            document.getElementById('page2').style.display = 'none';
-            document.getElementById('page' + pageNum).style.display = 'block';
-            
-            currentPage = pageNum;
-            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+      let page = 1;
+      function showPage(n) {
+        document.getElementById("page1").style.display =
+          n === 1 ? "block" : "none";
+        document.getElementById("page2").style.display =
+          n === 2 ? "block" : "none";
+        document.getElementById("page-info").textContent = `Page ${n} of 2`;
+      }
+      function changePage(delta) {
+        if (page + delta >= 1 && page + delta <= 2) {
+          page += delta;
+          showPage(page);
         }
-        
-        function prevPage() {
-            if (currentPage > 1) {
-                showPage(currentPage - 1);
-            }
-        }
-        
-        function nextPage() {
-            if (currentPage < totalPages) {
-                showPage(currentPage + 1);
-            }
-        }
-        
-        // Initialize page
-        showPage(1);
+      }
+      showPage(1);
     </script>
-</body>
+  </body>
 </html>
