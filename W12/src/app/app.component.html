@@ -1,14 +1,28 @@
-<div class="container">
-  <h2>Angular To-Do List</h2>
+<div class="container mt-5" style="max-width: 500px;">
+  <h2 class="text-center">Angular To-Do List</h2>
 
-  <input [(ngModel)]="taskText" placeholder="Enter task" />
-  <button (click)="addTask()">{{ editIndex === -1 ? 'Add' : 'Update' }}</button>
+  <div class="input-group mb-3">
+    <input
+      [(ngModel)]="newTask"
+      class="form-control"
+      placeholder="Enter your task"
+      (keyup.enter)="addTask()"
+    />
+    <button class="btn btn-primary" (click)="addTask()">
+      {{ isEditing ? 'Update' : 'Add' }}
+    </button>
+  </div>
 
-  <ul>
-    <li *ngFor="let task of tasks; let i = index">
+  <ul class="list-group">
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+      *ngFor="let task of tasks; let i = index"
+    >
       {{ task }}
-      <button (click)="editTask(i)">Edit</button>
-      <button (click)="deleteTask(i)">Delete</button>
+      <div>
+        <button class="btn btn-sm btn-warning me-2" (click)="editTask(i)">Edit</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteTask(i)">Delete</button>
+      </div>
     </li>
   </ul>
 </div>

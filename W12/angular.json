@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-to-do": {
+    "todo-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-to-do",
+            "outputPath": "dist/todo-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,12 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -64,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-to-do:build:production"
+              "buildTarget": "todo-app:build:production"
             },
             "development": {
-              "buildTarget": "angular-to-do:build:development"
+              "buildTarget": "todo-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,8 +92,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "6dc142a0-a084-409a-a11e-ce7a29d58984"
   }
 }
