@@ -1,168 +1,214 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>College Mobile Website</title>
+    <title>PICT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+    <style>
+        .ui-header .ui-title { color: #fff; }
+        .ui-navbar li .ui-btn { background-color: #1d4b8f; color: white; }
+        .ui-navbar li .ui-btn-active { background-color: #ff6600; }
+        .ui-collapsible-heading .ui-btn { background-color: #1d4b8f; color: white; }
+        .pict-footer { text-align: center; padding: 10px; background-color: #1d4b8f; color: white; }
+    </style>
 </head>
 <body>
-    <!-- Home Page -->
-    <div data-role="page" id="home">
-        <div data-role="header" data-theme="b">
-            <h1>ABC College</h1>
-        </div>
 
-        <div data-role="content">
-            <img src="https://via.placeholder.com/300x150" alt="College Logo" style="width: 100%">
-            
-            <ul data-role="listview" data-inset="true">
-                <li><a href="#about">About College</a></li>
-                <li><a href="#courses">Courses Offered</a></li>
-                <li><a href="#faculty">Faculty</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-            
-            <div class="ui-body ui-body-a ui-corner-all">
-                <h3>Welcome to ABC College</h3>
-                <p>Excellence in education since 1990. Join us for quality education and bright career prospects.</p>
-            </div>
-        </div>
-
-        <div data-role="footer" data-position="fixed" data-theme="b">
-            <h4>&copy; 2023 ABC College</h4>
-        </div>
+<!-- Home Page -->
+<div data-role="page" id="home">
+    <div data-role="header" style="background-color: #1d4b8f;">
+        <h1>PICT</h1>
     </div>
 
-    <!-- About Page -->
-    <div data-role="page" id="about">
-        <div data-role="header" data-theme="b">
-            <a href="#home" data-icon="home">Home</a>
-            <h1>About College</h1>
-        </div>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home" class="ui-btn-active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#departments">Depts</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 
-        <div data-role="content">
-            <h2>Our Mission</h2>
-            <p>To provide quality education that transforms students into responsible professionals.</p>
-            
-            <h2>Our Vision</h2>
-            <p>To be recognized as a leading institution in academic excellence.</p>
-            
-            <h2>Infrastructure</h2>
-            <ul data-role="listview" data-inset="true">
-                <li>Modern Classrooms</li>
-                <li>Computer Labs</li>
-                <li>Library</li>
-                <li>Sports Facilities</li>
+    <div role="main" class="ui-content">
+        <h2 style="text-align: center; color: #1d4b8f;">Pune Institute of Computer Technology</h2>
+        <p style="text-align: center;">Shaping Tomorrow's Technocrats</p>
+        
+        <div data-role="collapsible">
+            <h3>Latest News</h3>
+            <ul data-role="listview">
+                <li><a href="#">College Ranks #3 in Maharashtra</a></li>
+                <li><a href="#">New AI Research Center Inaugurated</a></li>
             </ul>
         </div>
+    </div>
+    
+    <div class="pict-footer">
+        <p>&copy; 2025 PICT</p>
+    </div>
+</div>
 
-        <div data-role="footer" data-position="fixed" data-theme="b">
-            <h4>&copy; 2023 ABC College</h4>
-        </div>
+<!-- About Us Page -->
+<div data-role="page" id="about">
+    <div data-role="header" style="background-color: #1d4b8f;">
+        <h1>About</h1>
     </div>
 
-    <!-- Courses Page -->
-    <div data-role="page" id="courses">
-        <div data-role="header" data-theme="b">
-            <a href="#home" data-icon="home">Home</a>
-            <h1>Courses Offered</h1>
-        </div>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about" class="ui-btn-active">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#departments">Depts</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 
-        <div data-role="content">
-            <ul data-role="listview" data-inset="true">
-                <li>
-                    <h3>Computer Science</h3>
-                    <p>4-year degree program covering software development and computer fundamentals.</p>
-                </li>
-                <li>
-                    <h3>Civil Engineering</h3>
-                    <p>4-year degree program focused on structural design and construction.</p>
-                </li>
-                <li>
-                    <h3>Business Administration</h3>
-                    <p>3-year program covering business management and entrepreneurship.</p>
-                </li>
+    <div role="main" class="ui-content">
+        <div data-role="collapsible" data-collapsed="false">
+            <h3>About PICT</h3>
+            <p>Established in 1983, PICT is a premier engineering institution affiliated to Savitribai Phule Pune University and approved by AICTE.</p>
+        </div>
+        
+        <div data-role="collapsible">
+            <h3>Vision & Mission</h3>
+            <p>To be a center of excellence in technical education with a focus on innovation, research, and ethical values.</p>
+        </div>
+    </div>
+    
+    <div class="pict-footer">
+        <p>&copy; 2025 PICT</p>
+    </div>
+</div>
+
+<!-- Courses Page -->
+<div data-role="page" id="courses">
+    <div data-role="header" style="background-color: #1d4b8f;">
+        <h1>Courses</h1>
+    </div>
+
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses" class="ui-btn-active">Courses</a></li>
+            <li><a href="#departments">Depts</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <div role="main" class="ui-content">
+        <div data-role="collapsible" data-collapsed="false">
+            <h3>Undergraduate</h3>
+            <ul data-role="listview">
+                <li>B.Tech in Computer Engineering</li>
+                <li>B.Tech in Information Technology</li>
+                <li>B.Tech in Electronics & Telecommunication</li>
             </ul>
         </div>
-
-        <div data-role="footer" data-position="fixed" data-theme="b">
-            <h4>&copy; 2023 ABC College</h4>
-        </div>
-    </div>
-
-    <!-- Faculty Page -->
-    <div data-role="page" id="faculty">
-        <div data-role="header" data-theme="b">
-            <a href="#home" data-icon="home">Home</a>
-            <h1>Faculty</h1>
-        </div>
-
-        <div data-role="content">
-            <ul data-role="listview" data-inset="true">
-                <li>
-                    <img src="https://via.placeholder.com/80" alt="Prof. Smith">
-                    <h3>Prof. John Smith</h3>
-                    <p>Computer Science Department</p>
-                </li>
-                <li>
-                    <img src="https://via.placeholder.com/80" alt="Dr. Williams">
-                    <h3>Dr. Mary Williams</h3>
-                    <p>Civil Engineering Department</p>
-                </li>
-                <li>
-                    <img src="https://via.placeholder.com/80" alt="Prof. Johnson">
-                    <h3>Prof. Robert Johnson</h3>
-                    <p>Business Department</p>
-                </li>
+        
+        <div data-role="collapsible">
+            <h3>Postgraduate & PhD</h3>
+            <ul data-role="listview">
+                <li>M.Tech in Computer Engineering</li>
+                <li>M.Tech in Information Technology</li>
+                <li>M.Tech in Electronics</li>
+                <li>PhD Programs in all departments</li>
             </ul>
         </div>
+    </div>
+    
+    <div class="pict-footer">
+        <p>&copy; 2025 PICT</p>
+    </div>
+</div>
 
-        <div data-role="footer" data-position="fixed" data-theme="b">
-            <h4>&copy; 2023 ABC College</h4>
-        </div>
+<!-- Departments Page -->
+<div data-role="page" id="departments">
+    <div data-role="header" style="background-color: #1d4b8f;">
+        <h1>Departments</h1>
     </div>
 
-    <!-- Contact Page -->
-    <div data-role="page" id="contact">
-        <div data-role="header" data-theme="b">
-            <a href="#home" data-icon="home">Home</a>
-            <h1>Contact Us</h1>
-        </div>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#departments" class="ui-btn-active">Depts</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 
-        <div data-role="content">
-            <div class="ui-body ui-body-a ui-corner-all">
-                <h3>Address</h3>
-                <p>123 Education Lane<br>Knowledge City, KN 12345</p>
-                
-                <h3>Phone</h3>
-                <p>123-456-7890</p>
-                
-                <h3>Email</h3>
-                <p>info@abccollege.edu</p>
-            </div>
-            
-            <div data-role="collapsible" data-collapsed="false">
-                <h3>Send us a message</h3>
-                <form>
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" id="name">
-                    
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email">
-                    
-                    <label for="message">Message:</label>
-                    <textarea name="message" id="message"></textarea>
-                    
-                    <button type="submit" data-theme="b">Send</button>
-                </form>
-            </div>
+    <div role="main" class="ui-content">
+        <div data-role="collapsible" data-collapsed="false">
+            <h3>Computer Engineering</h3>
+            <p>Focus: AI/ML, Data Science, Cybersecurity</p>
         </div>
-
-        <div data-role="footer" data-position="fixed" data-theme="b">
-            <h4>&copy; 2023 ABC College</h4>
+        
+        <div data-role="collapsible">
+            <h3>Information Technology</h3>
+            <p>Focus: Cloud Computing, IoT, Network Security</p>
+        </div>
+        
+        <div data-role="collapsible">
+            <h3>Electronics & Telecommunication</h3>
+            <p>Focus: VLSI, Embedded Systems, Signal Processing</p>
+        </div>
+        
+        <div data-role="collapsible">
+            <h3>Basic Sciences & Humanities</h3>
+            <p>Focus: Mathematics, Physics, Communication Skills</p>
         </div>
     </div>
+    
+    <div class="pict-footer">
+        <p>&copy; 2025 PICT</p>
+    </div>
+</div>
+
+<!-- Contact Page -->
+<div data-role="page" id="contact">
+    <div data-role="header" style="background-color: #1d4b8f;">
+        <h1>Contact</h1>
+    </div>
+
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#departments">Depts</a></li>
+            <li><a href="#contact" class="ui-btn-active">Contact</a></li>
+        </ul>
+    </div>
+
+    <div role="main" class="ui-content">
+        <div style="background-color: #fff; padding: 10px;">
+            <p><strong>Address:</strong> Survey No. 27, Dhankawadi, Pune - 411043</p>
+            <p><strong>Phone:</strong> +91-20-24371101</p>
+            <p><strong>Email:</strong> principal@pict.edu</p>
+        </div>
+        
+        <form style="margin-top: 15px;">
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email">
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit" class="ui-btn" style="background-color: #1d4b8f; color: white;">Submit</button>
+        </form>
+    </div>
+    
+    <div class="pict-footer">
+        <p>&copy; 2025 PICT</p>
+    </div>
+</div>
+
+<script>
+    $(document).on("pagecreate", function() {
+        $.mobile.defaultPageTransition = 'slide';
+    });
+</script>
+
 </body>
 </html>

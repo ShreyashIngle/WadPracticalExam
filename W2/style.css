@@ -1,63 +1,97 @@
+/* style.css */
+
+/* Importing Poppins font */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background: #f5f6fa; /* Light background */
+    color: #2f3640; /* Dark text */
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-}
-
+/* Navigation bar */
 nav {
-    background-color: #444;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    background-color: #2f3640;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-nav li {
+nav h2 {
+    color: white;
     margin: 0;
 }
 
-nav a {
+.nav-links a {
     color: white;
+    margin-left: 20px;
     text-decoration: none;
-    padding: 1rem 2rem;
-    display: block;
+    font-weight: bold;
 }
 
-section {
-    padding: 2rem;
-    margin: 1rem;
+.nav-links a:hover {
+    text-decoration: underline;
 }
 
-#about {
+/* Header */
+header {
     text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #74ebd5, #acb6e5); /* Attractive gradient */
 }
 
-#about img {
-    border-radius: 50%;
-    margin-bottom: 1rem;
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
-.project {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    margin-bottom: 1rem;
+header p {
+    font-size: 1.2em;
 }
 
+/* Card sections */
+.card {
+    background: white;
+    margin: 30px auto;
+    padding: 30px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+/* On hover, slight zoom */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Skills buttons */
+.skills span {
+    display: inline-block;
+    background: dodgerblue;
+    color: white;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+/* List styling */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Footer */
 footer {
-    background-color: #333;
+    background: #2f3640;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 20px 0;
+    margin-top: 30px;
 }

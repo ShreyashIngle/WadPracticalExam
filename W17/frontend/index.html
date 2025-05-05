@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Directory</title>
+  <style>
+    /* CSS for styling the page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .employee-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+      width: 200px;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .employee-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .employee-card h3 {
+      font-size: 18px;
+    }
+
+    .employee-card p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Employee Directory</h1>
+  <div id="employee-list"></div>
+
+  <script>
+    // Fetch employee data from the API using async/await
+    async function fetchEmployeeData() {
+      try {
+        const response = await fetch('http://localhost:5000/api/employees');
+        const data = await response.json();
+        const employeeList = document.getElementById('employee-list');
+        data.forEach(employee => {
+          const employeeCard = createEmployeeCard(employee);
+          employeeList.appendChild(employeeCard);
+        });
+      } catch (error) {
+        console.error('Error fetching employee data:', error);
+      }
+    }
+  
+    // Function to create an employee card
+    function createEmployeeCard(employee) {
+      const employeeCard = document.createElement('div');
+      employeeCard.className = 'employee-card';
+  
+      employeeCard.innerHTML = `
+        <img src="${employee.profileImage}" alt="${employee.name}">
+        <h3>${employee.name}</h3>
+        <p><strong>Designation:</strong> ${employee.designation}</p>
+        <p><strong>Department:</strong> ${employee.department}</p>
+        <p><strong>Salary:</strong> $${employee.salary}</p>
+      `;
+  
+      return employeeCard;
+    }
+  
+    // Call the fetchEmployeeData function to load the data
+    fetchEmployeeData();
+  </script>
+  
+</body>
+</html>
