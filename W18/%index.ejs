@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music Library</title>
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 10px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h2>Total Songs: <%= count %></h2>
+
+  <table>
+    <tr>
+      <th>Song Name</th>
+      <th>Film</th>
+      <th>Music Director</th>
+      <th>Singer</th>
+      <th>Actor</th>
+      <th>Actress</th>
+      <th>Actions</th>
+    </tr>
+    <% songs.forEach(song => { %>
+    <tr>
+      <td><%= song.Songname %></td>
+      <td><%= song.Film %></td>
+      <td><%= song.Music_director %></td>
+      <td><%= song.singer %></td>
+      <td><%= song.actor || '-' %></td>
+      <td><%= song.actress || '-' %></td>
+      <td>
+        <a href="/delete/<%= song.Songname %>">Delete</a> |
+        <a href="/update/<%= song.Songname %>">Add Actor/Actress</a>
+      </td>
+    </tr>
+    <% }); %>
+  </table>
+
+  <h3>Add New Song</h3>
+  <form method="POST" action="/add">
+    <input name="Songname" placeholder="Song Name" required><br>
+    <input name="Film" placeholder="Film" required><br>
+    <input name="Music_director" placeholder="Music Director" required><br>
+    <input name="singer" placeholder="Singer" required><br>
+    <input name="actor" placeholder="Actor"><br>
+    <input name="actress" placeholder="Actress"><br>
+    <button type="submit">Add Song</button>
+  </form>
+</body>
+</html>

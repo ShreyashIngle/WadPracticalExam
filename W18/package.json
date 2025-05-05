@@ -1,5 +1,5 @@
 {
-  "name": "w18-music-system",
+  "name": "music-app",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "mongoose": "^8.13.3"
+    "mongoose": "^8.14.1"
   }
 }
